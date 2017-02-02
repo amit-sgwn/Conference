@@ -9,6 +9,7 @@ admin.site.register(Track,TrackAdmin)
 class SessionAdmin(admin.ModelAdmin):
     list_display = ('title','track',)
     search_fields = ['title','abstract']
+    list_filter = ('track','speaker',)
 
 admin.site.register(Session,SessionAdmin)
 
