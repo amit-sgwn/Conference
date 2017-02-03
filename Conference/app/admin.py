@@ -19,7 +19,8 @@ class SessionAdmin(admin.ModelAdmin):
             message_bit = "%s session were "%row_updated
 
         self.message_user(request,"%s approved"%message_bit)
-        make_approved.short_description = "Mark session(s) as approved"
+        
+    make_approved.short_description = "Mark session(s) as approved"
 
 
 class SpeakerAdmin(admin.ModelAdmin):
