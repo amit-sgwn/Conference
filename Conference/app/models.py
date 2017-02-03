@@ -10,6 +10,9 @@ class Speaker(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
     bio = models.TextField(max_length=1000)
+    twitter = models.CharField(max_length=20 , blank=True)
+    facebook = models.CharField(max_length=50 , blank =True)
+
     def __str__(self):
         return self.name
 

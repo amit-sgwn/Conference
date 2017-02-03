@@ -15,4 +15,11 @@ admin.site.register(Session,SessionAdmin)
 
 class SpeakerAdmin(admin.ModelAdmin):
     list_display = ('name','bio',)
+    fieldsets  = (
+        ("General Information ",{"fields": ("name","bio",)}),
+         ("Social Media",{
+             "classes":("collapse"),
+             "fields":("twitter","facebook"),
+             "description":"Add social media here"})
+        )
 admin.site.register(Speaker,SpeakerAdmin)
