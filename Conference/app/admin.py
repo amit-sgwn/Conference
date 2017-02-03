@@ -9,6 +9,7 @@ class SessionAdmin(admin.ModelAdmin):
     list_display = ('title','status',)
     search_fields = ['title','abstract']
     list_filter = ('track','speaker',)
+    actions = ['make_approved',]
 
     def make_approved(self,request,queryset):
         row_updated = queryset.update(status = 'a')
@@ -18,6 +19,7 @@ class SessionAdmin(admin.ModelAdmin):
             message_bit = "%s session were "%row_updated
 
         self.message_user(request,"%s approved"%message_bit)
+        make_approved.short_description = "Mark session(s) as approved"
 
 
 class SpeakerAdmin(admin.ModelAdmin):
